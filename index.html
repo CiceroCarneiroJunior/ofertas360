@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https://*.alicdn.com https://*.aliexpress-media.com https://*.aliexpress.com https://*.magazineluiza.com.br https://*.media-amazon.com https://*.mlcdn.com.br https://*.mlstatic.com https://*.shopee.com.br https://*.ssl-images-amazon.com https://*.susercontent.com; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Ofertas 360 | Promoções conferidas todo dia</title>
+<meta name="description" content="Promoções de verdade nas maiores lojas do Brasil, conferidas todo dia. Grátis para participar.">
+<meta name="theme-color" content="#FFD43B">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Ofertas 360">
+<meta property="og:title" content="Ofertas 360: preço baixou, tá aqui">
+<meta property="og:description" content="Promoções de verdade nas maiores lojas do Brasil, conferidas todo dia. Grátis.">
+<link rel="canonical" href="https://ofertas360.com.br/">
+<meta property="og:url" content="https://ofertas360.com.br/">
+<meta property="og:image" content="https://ofertas360.com.br/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fontes/baloo-2-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="estilo.css">
+<script src="app.js" defer></script>
+</head>
+<body data-pagina="ofertas">
+<a class="pular" href="#ofertas">Pular para as ofertas</a>
+
+<header class="topo">
+  <a class="marca" href="./">
+    <img src="etiquetinha.svg" alt="" width="40" height="40">
+    <span>Ofertas 360</span>
+  </a>
+  <nav class="topo-nav" aria-label="Páginas">
+    <a class="topo-link" href="cupons.html">Cupons</a>
+    <a class="topo-link" href="canais.html">Canais</a>
+  </nav>
+</header>
+
+<main>
+  <section class="capa" aria-labelledby="titulo-capa">
+    <div class="capa-texto">
+      <h1 id="titulo-capa">Preço baixou,<br>tá aqui.</h1>
+      <p>Promoções conferidas todo dia nas maiores lojas do Brasil. Grátis, sem cadastro.</p>
+      <p class="capa-chamada">Receba as ofertas no celular:</p>
+      <ul class="canais-lista" id="canais-capa" aria-label="Nossos canais"></ul>
+    </div>
+    <img class="capa-mascote" src="etiquetinha.svg" alt="Etiquetinha, a mascote do Ofertas 360, acenando" width="240" height="240">
+  </section>
+
+  <section class="vitrine" id="ofertas" aria-labelledby="titulo-ofertas">
+    <div class="vitrine-cabeca">
+      <h2 id="titulo-ofertas">Ofertas de agora</h2>
+      <p class="atualizado" id="atualizado" aria-live="polite"></p>
+    </div>
+
+    <a class="faixa-cupons" id="faixa-cupons" href="cupons.html" hidden></a>
+    <div class="ferramentas">
+      <label class="busca">
+        <span class="visivel-leitor">Buscar oferta</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.6-3.6"></path></svg>
+        <input id="busca" type="search" placeholder="Buscar oferta" maxlength="60" autocomplete="off" enterkeyhint="search">
+      </label>
+      <label class="ordem">
+        <span class="visivel-leitor">Ordenar por</span>
+        <select id="ordem">
+          <option value="recentes">Mais recentes</option>
+          <option value="desconto">Maior desconto</option>
+          <option value="preco">Menor preço</option>
+        </select>
+      </label>
+    </div>
+    <div class="temas" id="temas" role="group" aria-label="Filtrar por assunto"></div>
+
+    <p class="aviso-exemplo" id="aviso-exemplo" hidden>Prévia com ofertas de exemplo: os links ainda não levam a produtos de verdade.</p>
+    <div class="grade" id="grade" aria-live="polite" aria-busy="true">
+      <p class="estado">Carregando ofertas...</p>
+    </div>
+    <div class="mais">
+      <button type="button" id="ver-mais" hidden>Ver mais ofertas</button>
+    </div>
+    <noscript><p class="estado">Ative o JavaScript para ver as ofertas, ou entre em um dos <a href="canais.html">nossos canais</a>.</p></noscript>
+  </section>
+</main>
+
+<dialog class="janela" id="janela-cupons" aria-labelledby="janela-titulo">
+  <div class="janela-topo">
+    <h2 id="janela-titulo">Cupons para este produto</h2>
+    <button type="button" class="janela-fechar" id="janela-fechar" aria-label="Fechar">×</button>
+  </div>
+  <p class="janela-produto" id="janela-produto"></p>
+  <div class="janela-lista" id="janela-lista"></div>
+  <p class="janela-nota">Copie o código e aplique no carrinho da loja. Cada loja tem suas regras: produtos participantes,
+    limite de uso e prazo podem mudar.</p>
+  <div class="janela-acoes">
+    <a class="janela-todos" id="janela-todos" href="cupons.html">Todos os cupons</a>
+    <a class="oferta-botao" id="janela-ir" href="./">Ver oferta</a>
+  </div>
+</dialog>
+
+<footer class="rodape">
+  <img src="etiquetinha.svg" alt="" width="56" height="56">
+  <p><strong>Links de afiliado:</strong> quando você compra por um link daqui, paga o mesmo preço e o Ofertas 360 pode ganhar uma pequena comissão da loja. É isso que mantém o canal grátis.</p>
+  <p>Preços, cupons e estoque mudam a qualquer momento e são de responsabilidade de cada loja. Confira tudo na página da loja antes de comprar.</p>
+  <p>Este site não usa cookies, não pede cadastro e não guarda nenhum dado seu.</p>
+  <p class="rodape-contato" id="contato"></p>
+  <p class="rodape-links"><a href="sobre.html">Sobre, privacidade e contato</a> · <a href="canais.html">Nossos canais</a> · <a href="cupons.html">Cupons</a></p>
+  <p class="rodape-pequeno">Os nomes das lojas pertencem aos seus donos. O Ofertas 360 não é uma loja e não vende produtos.</p>
+</footer>
+</body>
+</html>
