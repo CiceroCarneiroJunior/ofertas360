@@ -1,0 +1,23 @@
+# Ofertas 360: gerado pelo robô. Não edite à mão (é refeito a cada publicação).
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# Esconde arquivos internos do repositório (histórico do Git, avisos, etc.)
+RedirectMatch 404 (?i)/\.(git|github|nojekyll|htaccess)
+RedirectMatch 404 (?i)/(README\.md|CNAME)$
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Content-Security-Policy "frame-ancestors 'none'; base-uri 'none'; form-action 'none'"
+  Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+  <FilesMatch "\.(json|html)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(woff2|svg|png|css|js)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
